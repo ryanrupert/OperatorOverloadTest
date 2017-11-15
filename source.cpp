@@ -21,6 +21,16 @@ class Test
 		std::map<std::string, Test::Status> m = { {"Test", TEST}, {"Test2", TEST2}, {"Test3", TEST3}, {"Test4", TEST4} };
 };
 
+std::istream& operator >> (std::istream & in, Test& i)
+{
+	std::string temp;
+	in >> temp;
+	in.get();
+	//Source: https://stackoverflow.com/a/10514661
+	i.status = i.m[temp];
+	return in;
+}
+
 int main()
 {
 	return 0;
