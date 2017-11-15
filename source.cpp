@@ -31,6 +31,23 @@ std::istream& operator >> (std::istream & in, Test& i)
 	return in;
 }
 
+std::ostream& operator << (std::ostream & out, Test& o)
+{
+	std::string temp;
+	//Source: https://github.com/ryanrupert/StraddlingCheckerboards/blob/3479ccb785481f1bc0aaa28c2311e139ee827843/src/Maps.cpp
+	//the for const auto loop at the above link
+	for(const auto& foo : o.m)
+	{
+		if (foo.second == o.status) 
+		{
+			temp = foo.first;
+			break;
+		}
+	}
+	out << temp;
+	return out;
+}
+
 int main()
 {
 	return 0;
