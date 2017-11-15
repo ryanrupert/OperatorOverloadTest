@@ -14,6 +14,7 @@ class Test
 		//Source: http://www.cplusplus.com/forum/beginner/64186/
 		friend std::istream& operator >> (std::istream & in, Test& i);
 		friend std::ostream& operator << (std::ostream & out, Test& o);
+		Test& operator ++();
 	private:
 		enum Status { TEST, TEST2, TEST3, TEST4 };
 		Status status;
@@ -46,6 +47,12 @@ std::ostream& operator << (std::ostream & out, Test& o)
 	}
 	out << temp;
 	return out;
+}
+
+Test& Test::operator ++()
+{
+	status = static_cast<Status>(status + 1);
+	return *this;
 }
 
 int main()
