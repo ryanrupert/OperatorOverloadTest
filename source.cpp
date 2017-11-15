@@ -50,5 +50,10 @@ std::ostream& operator << (std::ostream & out, Test& o)
 
 int main()
 {
+	Test test;
+	std::cout << "Please enter a value:" << std::endl;
+	std::cin >> test;
+	std::cout << "You entered: " << test << std::endl;
+	std::cin.get();
 	return 0;
 }
