@@ -51,7 +51,14 @@ std::ostream& operator << (std::ostream & out, Test& o)
 
 Test& Test::operator ++()
 {
-	status = static_cast<Status>(status + 1);
+	if (status == TEST4) 
+	{
+		status = TEST;
+	}
+	else
+	{
+		status = static_cast<Status>(status + 1);
+	}
 	return *this;
 }
 
