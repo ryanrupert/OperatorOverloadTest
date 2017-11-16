@@ -1,7 +1,7 @@
 /**
 * Created by Ryan Rupert
 * Date: 2017-11-15
-* Source: None
+* Source: Links listed inline
 * This is a test of how operator overloading
 */
 
@@ -14,6 +14,8 @@ class Test
 		//Source: http://www.cplusplus.com/forum/beginner/64186/
 		friend std::istream& operator >> (std::istream & in, Test& i);
 		friend std::ostream& operator << (std::ostream & out, Test& o);
+		//Source: http://en.cppreference.com/w/cpp/language/operators
+		//under increment and decrement at the above link
 		Test& operator ++();
 	private:
 		enum Status { TEST, TEST2, TEST3, TEST4 };
