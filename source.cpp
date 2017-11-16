@@ -17,6 +17,7 @@ class Test
 		//Source: http://en.cppreference.com/w/cpp/language/operators
 		//under increment and decrement at the above link
 		Test& operator ++();
+		Test& operator --();
 	private:
 		enum Status { TEST, TEST2, TEST3, TEST4 };
 		Status status;
@@ -64,6 +65,19 @@ Test& Test::operator ++()
 	return *this;
 }
 
+Test& Test::operator --()
+{
+	if (status == TEST) 
+	{
+		status = TEST4;
+	}
+	else
+	{
+		status = static_cast<Status>(status - 1);
+	}
+	return *this;
+}
+
 int main()
 {
 	Test test;
@@ -71,6 +85,8 @@ int main()
 	std::cin >> test;
 	std::cout << "You entered: " << test << std::endl;
 	++test;
+	std::cout << "Modified: " << test << std::endl;
+	--test;
 	std::cout << "Modified: " << test << std::endl;
 	std::cin.get();
 	return 0;
