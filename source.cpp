@@ -68,6 +68,8 @@ int main()
 	std::cout << "Please enter a value:" << std::endl;
 	std::cin >> test;
 	std::cout << "You entered: " << test << std::endl;
+	++test;
+	std::cout << "Modified: " << test << std::endl;
 	std::cin.get();
 	return 0;
 }
